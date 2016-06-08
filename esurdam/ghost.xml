@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Name>ghost</Name>
+  <Support>http://lime-technology.com/forum/index.php</Support>
+  <Project>https://ghost.org/</Project>
+  <Description>Ghost is an open source publishing platform which is beautifully designed, easy to use, and free for everyone. Start a blog with Ghost today and learn to blog!</Description>
+  <Registry>https://hub.docker.com/r/_/ghost/</Registry>
+  <Repository>_/ghost</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Beta>true</Beta>
+  <Category>Network:Management Tools:</Category>
+  <Date>2016-06-07</Date>
+  <Changes>[center][img width='300px' src='https://raw.githubusercontent.com/esurdam/docker-templates/master/esurdam/img/ghost.png'][/center]
+
+    [center][font size=4]Ghost Change Log[/font][/center]
+    06.07.16: Initial Release</Changes>
+  <Environment>
+    <!-- <Variable>
+      <Name>GHOST_CONTENT</Name>
+      <Value>/var/lib/ghost</Value>
+    </Variable> -->
+  </Environment>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>2368</HostPort>
+        <ContainerPort>2368</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ghost</HostDir>
+      <ContainerDir>/var/lib/ghost</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Version></Version>
+  <WebUI>https://[IP]:[PORT:2368]</WebUI>
+  <Banner></Banner>
+  <Icon>https://raw.githubusercontent.com/esurdam/docker-templates/master/esurdam/img/ghost.png</Icon>
+  <ExtraParams></ExtraParams>
+</Container>
