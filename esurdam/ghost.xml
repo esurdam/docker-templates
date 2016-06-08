@@ -16,10 +16,6 @@
     [center][font size=4]Ghost Change Log[/font][/center]
     06.07.16: Initial Release</Changes>
   <Environment>
-    <!-- <Variable>
-      <Name>GHOST_CONTENT</Name>
-      <Value>/var/lib/ghost</Value>
-    </Variable> -->
   </Environment>
   <Networking>
     <Mode>bridge</Mode>
