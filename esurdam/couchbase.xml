@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>couchbase</Name>
+  <Repository>couchbase</Repository>
+  <Registry>https://hub.docker.com/_/couchbase/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/_/couchbase/</Support>
+  <Project/>
+  <Overview>Couchbase Server is a NoSQL document database with a distributed architecture.&#xD;
+[b]Converted By Community Applications[/b]</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT: 8091]</WebUI>
+  <TemplateURL/>
+  <Icon>https://avatars1.githubusercontent.com/u/605755?s=200&amp;amp;v=4</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <DateInstalled>1524301917</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <DonateImg/>
+  <MinVer/>
+  <Description>Couchbase Server is a NoSQL document database with a distributed architecture.&#xD;
+[b]Converted By Community Applications[/b]</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8091-8094</HostPort>
+        <ContainerPort>8091-8094</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/couchbase/data</HostDir>
+      <ContainerDir>/opt/couchbase/var/lib/couchbase/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>11210</Value>
+      <Name>11210</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Config Name="8091-8094" Target="8091-8094" Default="" Mode="tcp" Description="Container Port: 8091-8094" Type="Port" Display="always" Required="true" Mask="false">8091-8094</Config>
+  <Config Name="11210" Target="11210" Default="" Mode="" Description="Container Variable: 11210" Type="Variable" Display="always" Required="true" Mask="false">11210</Config>
+  <Config Name="data" Target="/opt/couchbase/var/lib/couchbase/data" Default="" Mode="rw" Description="Container Path: /opt/couchbase/var/lib/couchbase/data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/couchbase/data</Config>
+</Container>
