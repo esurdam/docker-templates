@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>redis</Name>
-  <Repository>_/redis</Repository>
+  <Repository>redis</Repository>
   <Registry>https://hub.docker.com/_/redis</Registry>
   <Network>bridge</Network>
   <MyIP/>
