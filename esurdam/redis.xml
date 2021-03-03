@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>redis</Name>
+  <Repository>esurdam/redis</Repository>
+  <Registry>https://hub.docker.com/_/redis</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>http://lime-technology.com/forum/index.php?topic=38930.0</Support>
+  <Project/>
+  <Overview>&#xD;
+    General purpose redis container&#xD;
+  </Overview>
+  <Category>Tools:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://cdn4.iconfinder.com/data/icons/redis-2/1451/Untitled-2-128.png</Icon>
+  <ExtraParams></ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled></DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#xD;
+    General purpose redis container&#xD;
+  </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish/>
+  </Networking>
+  <Data/>
+  <Environment/>
+  <Labels/>
+  <Config 
+       Type="Port" 
+       Name="Redis DB" 
+       Target="6379" 
+       Default="6379" 
+       Mode="tcp" 
+       Description="Port that redis DB listens on." 
+       Display="always" 
+       Required="true">6379</Config>
+</Container>
