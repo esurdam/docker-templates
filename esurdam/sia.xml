@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>sia-container</Name>
+    <Repository>nebulouslabs/sia:alpine-latest</Repository>
+    <Registry>https://hub.docker.com/r/nebulouslabs/sia</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support></Support>
+    <Project>https://sia.tech/</Project>
+    <Overview>Sia is a decentralized storage platform secured by blockchain technology. The Sia Storage Platform
+        leverages underutilized hard drive capacity around the world to create a data storage marketplace that is more
+        reliable and lower cost than traditional cloud storage providers. [Block-chain] [BTC-Token]&#xD;
+        &#xD;
+    </Overview>
+    <Category>Cloud: Other:</Category>
+    <WebUI/>
+    <TemplateURL/>
+    <Icon>https://i.imgur.com/XiSQgV4.png</Icon>
+    <ExtraParams></ExtraParams>
+    <PostArgs/>
+    <CPUset/>
+    <DateInstalled></DateInstalled>
+    <DonateText/>
+    <DonateLink/>
+    <Description>&#xD;
+        A Sia container for unraid
+    </Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish/>
+    </Networking>
+    <Data/>
+    <Environment/>
+    <Labels/>
+    <Config
+            Type="Port"
+            Name="API Port"
+            Target="9980"
+            Default="127.0.0.1:9980"
+            Mode="tcp"
+            Description="api"
+            Display="always"
+            Required="true">127.0.0.1:9980
+    </Config>
+    <Config
+            Type="Port"
+            Name="API P2P Consensus"
+            Target="9981"
+            Default="9981"
+            Mode="tcp"
+            Description="consensus p2p network"
+            Display="always"
+            Required="true">9981
+    </Config>
+    <Config
+            Type="Port"
+            Name="API Renter Host Protocol"
+            Target="9982"
+            Default="9982"
+            Mode="tcp"
+            Description="renter-host-protocol-v2"
+            Display="always"
+            Required="true">9982
+    </Config>
+    <Config
+            Type="Port"
+            Name="API rhp-v3"
+            Target="9983"
+            Default="9983"
+            Mode="tcp"
+            Description="rhp-v3"
+            Display="always"
+            Required="true">9983
+    </Config>
+    <Config
+            Type="Port"
+            Name="API rhp-v3 websocket"
+            Target="9984"
+            Default="9984"
+            Mode="tcp"
+            Description="rhp-v3-websocket"
+            Display="always"
+            Required="true">9984
+    </Config>
+    <Config
+            Name="SIA_DATA_DIR"
+            Target="/sia-data"
+            Default="/mnt/user/appdata/sia-data"
+            Mode="rw"
+            Description="Container Path: /sia-data"
+            Type="Path"
+            Display="always"
+            Required="true"
+            Mask="false">/mnt/user/appdata/sia-data
+    </Config>
+    <Config
+            Name="sia share dir"
+            Target="/share"
+            Default="/mnt/user/SIA-SHARE"
+            Mode="rw"
+            Description="Directory used as root share volume. Used for hosting storage"
+            Type="Path"
+            Display="always"
+            Required="false"
+            Mask="false">/mnt/user/SIA-SHARE
+    </Config>
+    <Config
+            Name="Sia Modules"
+            Target="SIA_MODULES"
+            Default="gctwh"
+            Mode=""
+            Description="Sets which modules to enable. gctw for wallet. gctwh for wallet plus host."
+            Type="Variable"
+            Display="advanced"
+            Required="false"
+            Mask="false">gctwh
+    </Config>
+    <Config
+            Name="Wallet Password"
+            Target="SIA_WALLET_PASSWORD"
+            Default=""
+            Mode=""
+            Description="Optional Seed token to use for wallet; otherwise console login and init wallet."
+            Type="Variable"
+            Display="always"
+            Required="false"
+            Mask="false"></Config>
+</Container>
