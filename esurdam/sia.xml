@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>sia-container</Name>
-    <Repository>nebulouslabs/sia:alpine-latest</Repository>
-    <Registry>https://hub.docker.com/r/nebulouslabs/sia</Registry>
+    <Repository>esurdam/sia:alpine-latest</Repository>
+    <Registry>https://hub.docker.com/r/esurdam/sia</Registry>
     <Network>bridge</Network>
     <MyIP/>
     <Shell>sh</Shell>
@@ -23,9 +23,14 @@
     <CPUset/>
     <DateInstalled></DateInstalled>
     <DonateText/>
-    <DonateLink/>
+    <DonateLink>SIA:ea0c30244ea9755f5dc72f8403ba5ed22e51a2e7f5d66a8075f1ab8d4cf71e9c34d761dac500</DonateLink>
     <Description>&#xD;
-        A Sia container for unraid
+        A Sia container for unraid&#xD;
+        &#xD;
+        Enter console from UI and enter `siac wallet init`.&#xD;
+        IMPORTANT: Copy down this seed token. &#xD;
+        Enter it into Wallet Password (SIA_WALLET_PASSWORD) in this config.
+        Container will auto unlock on restart.
     </Description>
     <Networking>
         <Mode>bridge</Mode>
@@ -89,7 +94,7 @@
             Target="/sia-data"
             Default="/mnt/user/appdata/sia-data"
             Mode="rw"
-            Description="Container Path: /sia-data"
+            Description="Container Path: /sia-data; used to store blockchain and wallet"
             Type="Path"
             Display="always"
             Required="true"
@@ -109,13 +114,13 @@
     <Config
             Name="Sia Modules"
             Target="SIA_MODULES"
-            Default="gctwh"
+            Default="gctwhr"
             Mode=""
-            Description="Sets which modules to enable. gctw for wallet. gctwh for wallet plus host."
+            Description="Sets which modules to enable. (w = wallet)(h = host)(r=renter)."
             Type="Variable"
             Display="advanced"
             Required="false"
-            Mask="false">gctwh
+            Mask="false">gctwhr
     </Config>
     <Config
             Name="Wallet Password"
@@ -126,5 +131,5 @@
             Type="Variable"
             Display="always"
             Required="false"
-            Mask="false"></Config>
+            Mask="false"/>
 </Container>
