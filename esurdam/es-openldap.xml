@@ -90,7 +90,7 @@
     </Config>
     <WebUI/>
     <Banner/>
-    <Icon/>
+    <Icon>https://raw.githubusercontent.com/esurdam/docker-templates/master/esurdam/img/openldap.png</Icon>
 </Container>
 
 
