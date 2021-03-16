@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+    <Beta>False</Beta>
+    <Category/>
+    <!-- Date in format YYYY-MM-DD  -->
+    <Date>2021-03-15</Date>
+    <Changes>
+        [center][img width='300px'
+        src='https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/linuxserver_small.png'][/center]
+
+        [center][font size=4] Change Log[/font][/center]
+        2021-03-15 Created
+    </Changes>
+    <!-- name preferably in lowercase  -->
+    <Name>es-openldap</Name>
+    <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
+    <Support/>
+    <Description>[br]
+        [br][br][b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
+        [b]/config[/b] : Mapping for config files [br]
+    </Description>
+    <!-- link to the apps homepage or git page  -->
+    <Project/>
+    <!-- DON'T use any "&" in the overview section  -->
+    <Overview> A docker image to run OpenLDAP, The container default log level is info. Available levels are: none, error, warning, info, debug and trace. To use this container with phpldapadmin, create a custom network that both containers are on and then link them using --link openldap:PHPLDAPADMIN_LDAP_HOSTS in the extra parameters of the phpldapadmin docker container (which should be equal to HOSTNAME in this container). Any other docker that wants to use LDAP credentials will need the same extra parameter including Let's Encrypt if you are using linuxserver.io's ldap-auth container.</Overview>
+    <!-- dockerhub link  -->
+    <Registry>bitnami/openldap</Registry>
+    <Repository>bitnami/openldap</Repository>
+    <BindTime>true</BindTime>
+    <Privileged>false</Privileged>
+    <Network Default="bridge">bridge</Network>
+    <Config Name="User ID" Target="PUID" Default="99" Mode="" Description="Set to Desired User ID"
+            Type="Variable" Display="always" Required="true" Mask="false">99
+    </Config>
+    <Config Name="Group ID" Target="PGID" Default="100" Mode="" Description="Set to Desired Group ID"
+            Type="Variable" Display="always" Required="true" Mask="false">100
+    </Config>
+
+    <Config Name="LDAP Root" Target="LDAP_ROOT" Default="dc=example,dc=org" Mode=""
+            Description="LDAP database root node of the LDAP tree."
+            Type="Variable" Display="always" Required="true" Mask="false">dc=example,dc=org
+    </Config>
+    <Config Name="Admin Username" Target="LDAP_ADMIN_USERNAME" Default="admin" Mode=""
+            Description="LDAP database admin user."
+            Type="Variable" Display="always" Required="true" Mask="false">admin
+    </Config>
+    <Config Name="Admin Password" Target="LDAP_ADMIN_PASSWORD" Default="adminpassword" Mode=""
+            Description="LDAP database admin password."
+            Type="Variable" Display="always" Required="true" Mask="false">adminpassword
+    </Config>
+    <Config Name="Custom Users" Target="LDAP_USERS" Default="customuser" Mode=""
+            Description="Comma separated list of LDAP users to create in the default LDAP tree."
+            Type="Variable" Display="always" Required="true" Mask="false">customuser
+    </Config>
+    <Config Name="Custom User Passwords" Target="LDAP_PASSWORDS" Default="custompassword" Mode=""
+            Description="Comma separated list of passwords to use for LDAP users."
+            Type="Variable" Display="always" Required="true" Mask="false">custompassword
+    </Config>
+    <Config Name="Custom User Group" Target="LDAP_GROUP" Default="readers" Mode=""
+            Description="Group used to group created users."
+            Type="Variable" Display="advanced" Required="false" Mask="false"/>
+    <Config
+            Type="Path"
+            Name="Config directory"
+            Target="/bitnami/openldap/"
+            Default="/mnt/user/appdata/bitnami-openldap/"
+            Mode="rw"
+            Description="This is where openldap will store it's databases and configuration."
+            Required="true">/mnt/user/appdata/bitnami-openldap/
+    </Config>
+    <Config
+            Type="Port"
+            Name="LDAP_PORT_NUMBER"
+            Target="1389"
+            Default="1389"
+            Mode="tcp"
+            Description="The port OpenLDAP is listening for requests. Default: 1389 (non privileged port)"
+            Display="always"
+            Required="true">1389
+    </Config>
+    <Config
+            Type="Port"
+            Name="LDAP_LDAPS_PORT_NUMBER"
+            Target="1636"
+            Default="1636"
+            Mode="tcp"
+            Description="Port used for TLS secure traffic."
+            Display="always"
+            Required="true">1636
+    </Config>
+    <WebUI/>
+    <Banner/>
+    <Icon/>
+</Container>
+
+
