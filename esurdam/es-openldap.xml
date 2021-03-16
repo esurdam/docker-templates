@@ -13,7 +13,7 @@
     </Changes>
     <!-- name preferably in lowercase  -->
     <Name>es-openldap</Name>
-    <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
+    <Icon>https://raw.githubusercontent.com/esurdam/docker-templates/master/esurdam/img/openldap.png</Icon>
     <Support/>
     <Description>[br]
         [br][br][b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
@@ -90,7 +90,6 @@
     </Config>
     <WebUI/>
     <Banner/>
-    <Icon>https://raw.githubusercontent.com/esurdam/docker-templates/master/esurdam/img/openldap.png</Icon>
 </Container>
 
 
