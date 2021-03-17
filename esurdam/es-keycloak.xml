@@ -15,7 +15,7 @@
     <Icon>https://raw.githubusercontent.com/esurdam/docker-templates/master/esurdam/img/keycloak.png</Icon>
     <ExtraParams/>
     <PostArgs/>
-    <Config Name="WebUI port" Target="8443" Default="8443" Mode="tcp" Description="WebUI port" Type="Port" Display="always" Required="true" Mask="false"/>
+    <Config Name="WebUI port" Target="8443" Default="8443" Mode="tcp" Description="WebUI port" Type="Port" Display="always" Required="false" Mask="false"/>
     <Config Name="PROXY_ADDRESS_FORWARDING" Target="PROXY_ADDRESS_FORWARDING" Default="true" Description="True if behind a reverse proxy" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="KEYCLOAK_USER" Target="KEYCLOAK_USER" Default="admin" Description="Admin username" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="KEYCLOAK_PASSWORD" Target="KEYCLOAK_PASSWORD" Default="password" Description="Admin password" Type="Variable" Display="always" Required="true" Mask="false"/>

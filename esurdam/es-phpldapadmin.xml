@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>es-phpldapadmin</Name>
+    <Repository>osixia/phpldapadmin</Repository>
+    <Registry>https://hub.docker.com/r/osixia/phpldapadmin/</Registry>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support></Support>
+    <Project>https://github.com/osixia/docker-phpLDAPadmin</Project>
+    <Overview>A docker image to run phpldapadmin. It provides a user interface to an openldap database. It must be on the same custom network as openldap and must be linked via --link openldap:PHPLDAPADMIN_LDAP_HOSTS e.g. --link openldap:example.org&#xD;
+        An example config.php can be found here: https://github.com/commandprompt/phpldapadmin/blob/master/config/config.php.example</Overview>
+    <Category>Network:Other Tools:</Category>
+    <WebUI>https://[IP]:[PORT:443]/</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/esurdam/docker-templates/master/esurdam/phpldapadmin.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/esurdam/docker-templates/master/esurdam/img/phpldapadmin.png</Icon>
+    <ExtraParams/>
+    <PostArgs>--loglevel debug</PostArgs>
+    <Config Name="WebUI port" Target="443" Default="8443" Mode="tcp" Description="WebUI port" Type="Port" Display="always" Required="false" Mask="false"/>
+    <Config Name="PHPLDAPADMIN_LDAP_HOSTS" Target="PHPLDAPADMIN_LDAP_HOSTS" Default="#PYTHON2BASH:[{'es-openldap': [{'server': [{'tls': False, 'port': 1389}]},{'login': [{'bind_id': 'cn=admin,dc=surdam,dc=casa'}]}]}]" Description="Set in the phpldapadmin server config.php" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Appdata" Target="/container/service/phpldapadmin/assets/config/" Default="/mnt/user/appdata/phpldapadmin" Mode="rw" Description="Place your config.php in this path after setting up basic stuff in it like a hostname value" Type="Path" Display="advanced" Required="true" Mask="false"/>
+</Container>
