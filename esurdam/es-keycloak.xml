@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>es-keycloak</Name>
+    <Repository>quay.io/keycloak/keycloak:12.0.4</Repository>
+    <Registry>https://quay.io/keycloak/keycloak</Registry>
+    <Network>bridge</Network>
+    <Privileged>false</Privileged>
+    <Support/>
+    <Project>https://github.com/keycloak/keycloak</Project>
+    <Overview>Keycloak is an Open Source Identity and Access Management solution for modern Applications and Services.
+    </Overview>
+    <Category>Network:Other Tools:</Category>
+    <WebUI>https://[IP]:[PORT:443]/</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/esurdam/docker-templates/master/esurdam/es-keycloak.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/esurdam/docker-templates/master/esurdam/img/keycloak.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <Config Name="WebUI port" Target="8443" Default="8443" Mode="tcp" Description="WebUI port" Type="Port" Display="always" Required="true" Mask="false"/>
+    <Config Name="PROXY_ADDRESS_FORWARDING" Target="PROXY_ADDRESS_FORWARDING" Default="true" Description="True if behind a reverse proxy" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="KEYCLOAK_USER" Target="KEYCLOAK_USER" Default="admin" Description="Admin username" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="KEYCLOAK_PASSWORD" Target="KEYCLOAK_PASSWORD" Default="password" Description="Admin password" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="Appdata" Target="/opt/jboss/keycloak/standalone/data/" Default="/mnt/user/appdata/keycloak/data/" Mode="rw" Description="Location of stored keycloak data" Type="Path" Display="advanced" Required="true" Mask="false"/>
+</Container>

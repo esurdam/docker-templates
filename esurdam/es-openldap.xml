@@ -22,7 +22,15 @@
     <!-- link to the apps homepage or git page  -->
     <Project/>
     <!-- DON'T use any "&" in the overview section  -->
-    <Overview> A docker image to run OpenLDAP, The container default log level is info. Available levels are: none, error, warning, info, debug and trace. To use this container with phpldapadmin, create a custom network that both containers are on and then link them using --link openldap:PHPLDAPADMIN_LDAP_HOSTS in the extra parameters of the phpldapadmin docker container (which should be equal to HOSTNAME in this container). Any other docker that wants to use LDAP credentials will need the same extra parameter including Let's Encrypt if you are using linuxserver.io's ldap-auth container.</Overview>
+    <Overview>
+        First ssh into unraid server and create docker network. `docker network create ldap-network`
+        [br]A docker image to run OpenLDAP, The container default log level is info. Available levels are: none, error,
+        warning, info, debug and trace. To use this container with phpldapadmin, create a custom network that both
+        containers are on and then link them using --link openldap:PHPLDAPADMIN_LDAP_HOSTS in the extra parameters of
+        the phpldapadmin docker container (which should be equal to HOSTNAME in this container). Any other docker that
+        wants to use LDAP credentials will need the same extra parameter including Let's Encrypt if you are using
+        linuxserver.io's ldap-auth container.
+    </Overview>
     <!-- dockerhub link  -->
     <Registry>bitnami/openldap</Registry>
     <Repository>bitnami/openldap</Repository>
@@ -76,7 +84,7 @@
             Mode="tcp"
             Description="The port OpenLDAP is listening for requests. Default: 1389 (non privileged port)"
             Display="always"
-            Required="true">1389</Config>
+            Required="false"/>
     <Config
             Type="Port"
             Name="LDAP_LDAPS_PORT_NUMBER"
@@ -85,7 +93,7 @@
             Mode="tcp"
             Description="Port used for TLS secure traffic."
             Display="always"
-            Required="true">1636</Config>
+            Required="false"/>
     <WebUI/>
     <Banner/>
 </Container>
