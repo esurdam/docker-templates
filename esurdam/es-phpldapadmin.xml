@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
     <Name>es-phpldapadmin</Name>
-    <Repository>osixia/phpldapadmin</Repository>
+    <Repository>osixia/phpldapadmin:0.9.0</Repository>
     <Registry>https://hub.docker.com/r/osixia/phpldapadmin/</Registry>
     <Network>bridge</Network>
     <Privileged>false</Privileged>
@@ -16,6 +16,6 @@
     <ExtraParams/>
     <PostArgs>--loglevel debug</PostArgs>
     <Config Name="WebUI port" Target="443" Default="8443" Mode="tcp" Description="WebUI port" Type="Port" Display="always" Required="false" Mask="false"/>
-    <Config Name="PHPLDAPADMIN_LDAP_HOSTS" Target="PHPLDAPADMIN_LDAP_HOSTS" Default="#PYTHON2BASH:[{'es-openldap': [{'server': [{'tls': False, 'port': 1389}]},{'login': [{'bind_id': 'cn=admin,dc=surdam,dc=casa'}]}]}]" Description="Set in the phpldapadmin server config.php" Type="Variable" Display="always" Required="true" Mask="false"/>
+    <Config Name="PHPLDAPADMIN_LDAP_HOSTS" Target="PHPLDAPADMIN_LDAP_HOSTS" Default="#PYTHON2BASH:[{'es-openldap': [{'server': [{'tls': False, 'port': 1389}]},{'login': [{'bind_id': 'cn=admin,dc=example,dc=org'}]}]}]" Description="Set in the phpldapadmin server config.php" Type="Variable" Display="always" Required="true" Mask="false"/>
     <Config Name="Appdata" Target="/container/service/phpldapadmin/assets/config/" Default="/mnt/user/appdata/phpldapadmin" Mode="rw" Description="Place your config.php in this path after setting up basic stuff in it like a hostname value" Type="Path" Display="advanced" Required="true" Mask="false"/>
 </Container>
